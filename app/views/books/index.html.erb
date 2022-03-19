@@ -1,0 +1,17 @@
+<%= link_to "Create New Book", new_book_path %>
+<%= link_to "Active Book", active_books_path %>
+<hr>
+<% @books.each do |book| %>
+    <div>
+        <div><%= book.id %></div>
+        <div><%= book.title %></div>
+        <div><%= book.page %></div>
+        <div><%= book.description %></div>
+        <div>Status: <%= book.status %></div>
+        <div><%= link_to "Show", book_path(book) %></div>
+        <div><%= link_to "Edit", edit_book_path(book) %></div>
+        <div><%= link_to "Delete", book_path(book), data: { "turbo-method": :delete } %></div>
+        <div><%= link_to "Non Active", toggle_book_path(book), data: { "turbo-method": :patch } %></div>
+    </div>
+    <hr>
+<% end %>

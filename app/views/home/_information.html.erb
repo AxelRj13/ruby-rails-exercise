@@ -1,0 +1,7 @@
+<h3>Informasi Produk Terkini</h3>
+<p><%= product_laris %></p>
+<ul>
+    <% products.each do |product| %>
+        <li><%= product.title %> (Page: <%= product.page %>)</li>
+    <% end %>
+</ul>
